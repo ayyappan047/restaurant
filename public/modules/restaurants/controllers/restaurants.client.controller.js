@@ -10,7 +10,9 @@ angular.module('restaurants').controller('RestaurantsController', ['$scope', '$s
 			// Create new Restaurant object
 			var restaurant = new Restaurants ({
 				name: this.name,
-				address: this.address
+				address: this.address,
+				contact: this.contact,
+				cuisine: this.cuisine
 			});
 
 			// Redirect after save

@@ -2,6 +2,8 @@
 	<div class="page-header">
 		<h1 data-ng-bind="restaurant.name"></h1>
 		<p data-ng-bind="restaurant.address"></p>
+		<p data-ng-bind="restaurant.contact"></p>
+		<p data-ng-bind="restaurant.cuisine"></p>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == restaurant.user._id))">
 		<a class="btn btn-primary" href="/#!/restaurants/{{restaurant._id}}/edit">
