@@ -16,6 +16,12 @@ var RestaurantSchema = new Schema({
 		required: 'Please fill Restaurant name',
 		trim: true
 	},
+	address: {
+		type: String,
+		default: '',
+		required: 'Please fill Restaurant address',
+		trim: true
+	},
 	created: {
 		type: Date,
 		default: Date.now
