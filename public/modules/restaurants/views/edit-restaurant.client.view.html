@@ -1,41 +1,43 @@
-<section data-ng-controller="RestaurantsController" data-ng-init="findOne()">
-    <div class="page-header">
-        <h1>Edit Restaurant</h1>
-    </div>
-    <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="update()" novalidate>
-            <fieldset>
-                <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="restaurant.name" id="name" class="form-control" placeholder="Name" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="address">Address</label>
-                    <div class="controls">
-                        <textarea data-ng-model="restaurant.address" id="address" class="form-control" placeholder="Address" required></textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="contact">Contact</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="restaurant.contact" id="contact" class="form-control" placeholder="Contact Number" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="cuisine">Cuisine</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="restaurant.cuisine" id="cuisine" class="form-control" placeholder="Cuisine" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Update" class="btn btn-default">
-                </div>
-				<div data-ng-show="error" class="text-danger">
-					<strong data-ng-bind="error"></strong>
-				</div>
-            </fieldset>
-        </form>
-    </div>
-</section>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <section data-ng-controller="RestaurantsController" data-ng-init="findOne()">
+      <div class="page-header">
+        <h3>Update Restaurant</h3>
+      </div>
+      <div class="col-md-12">
+        <form name="restaurantForm" data-ng-submit="update()">
+          <div layout layout-sm="column">
+            <md-input-container style="width:100%">
+              <label>Name</label>
+              <input name="name" ng-model="restaurant.name" required>
+            </md-input-container>
+          </div>
+          <div layout layout-sm="column">
+            <md-input-container style="width:100%">
+              <label>Address</label>
+              <textarea data-ng-model="restaurant.address" required></textarea>
+            </md-input-container>
+          </div>
+          <div layout layout-sm="column">
+            <md-input-container style="width:50%">
+              <label>Contact</label>
+              <input name="contact" ng-model="restaurant.contact" required>
+            </md-input-container>
+            <md-input-container flex>
+              <label>Cuisine</label>
+              <input name="cuisine" ng-model="restaurant.cuisine" required>
+            </md-input-container>
+          </div>
+          <div layout layout-sm="column">
+            <md-button type="submit" class="md-raised md-primary">
+            Update
+            </md-button>
+          </div>
+          <div data-ng-show="error" class="text-danger">
+            <span data-ng-bind="error"></span>
+         </div>
+       </form>
+     </div>
+   </section>
+ </div>
+</div>
