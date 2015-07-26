@@ -1,0 +1,38 @@
+<div data-ng-controller="HeaderController" data-ng-show="authentication.user">
+  <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left">
+    <h3 data-ng-bind="authentication.user.displayName" class="text-center"></h3><br>
+    <md-divider></md-divider>
+    <md-list>
+      <md-list-item>
+        <md-button ng-click="navigate('createRestaurant')">
+          Create Restaurant
+        </md-button>
+      </md-list-item>
+      <md-list-item>
+        <md-button ng-click="navigate('listRestaurants')" >
+          List Restaurants
+        </md-button>
+      </md-list-item>
+      <md-list-item>
+        <md-button ng-click="navigate('profile')">
+          Edit Profile
+        </md-button>
+      </md-list-item>
+      <md-list-item>
+        <md-button ng-click="navigate('accounts')">
+          Manage Social Accounts
+        </md-button>
+      </md-list-item>
+      <md-list-item>
+        <md-button ng-click="navigate('password')">
+          Change Password
+        </md-button>
+      </md-list-item>
+      <md-list-item>
+        <md-button ng-click="signout()"> 
+          Signout
+        </md-button>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+</div>
