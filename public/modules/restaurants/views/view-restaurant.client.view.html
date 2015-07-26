@@ -1,24 +1,32 @@
-<section data-ng-controller="RestaurantsController" data-ng-init="findOne()">
-	<div class="page-header">
-		<h1 data-ng-bind="restaurant.name"></h1>
-		<p data-ng-bind="restaurant.address"></p>
-		<p data-ng-bind="restaurant.contact"></p>
-		<p data-ng-bind="restaurant.cuisine"></p>
-	</div>
-	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == restaurant.user._id))">
-		<a class="btn btn-primary" href="/#!/restaurants/{{restaurant._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</div>
-	<small>
-		<em class="text-muted">
-			Posted on
-			<span data-ng-bind="restaurant.created | date:'mediumDate'"></span>
-			by
-			<span data-ng-bind="restaurant.user.displayName"></span>
-		</em>
-	</small>
-</section>
+<div class="row">
+	<div class="col-xs-6 col-xs-offset-3">
+    <div data-ng-controller="RestaurantsController" data-ng-init="findOne()">
+      <md-content class="md-padding">
+        <md-card>
+          <md-card-content>
+            <h1 class="md-title" data-ng-bind="restaurant.name"></h1>
+            <p data-ng-bind="restaurant.address"></p>
+            <p data-ng-bind="restaurant.contact"></p>
+            <p data-ng-bind="restaurant.cuisine"></p>
+            <small>
+              <em class="text-muted">
+                Posted on
+                <span data-ng-bind="restaurant.created | date:'mediumDate'"></span>
+                by
+                <span data-ng-bind="restaurant.user.displayName"></span>
+              </em>
+            </small>
+          </md-card-content>
+          <div class="md-actions" layout-align="start center" data-ng-show="((authentication.user) && (authentication.user._id == restaurant.user._id))">
+            <a href="/#!/restaurants/{{restaurant._id}}/edit">
+              <md-button>Edit</md-button>
+            </a>
+            <a data-ng-click="remove();">
+              <md-button>Delete</md-button>
+            </a>
+          </div>
+        </md-card>
+      </md-content>
+    </div>
+  </div>
+</div>
