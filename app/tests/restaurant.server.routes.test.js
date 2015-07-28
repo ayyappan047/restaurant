@@ -38,7 +38,10 @@ describe('Restaurant CRUD tests', function() {
 		// Save a user to the test db and create new Restaurant
 		user.save(function() {
 			restaurant = {
-				name: 'Restaurant Name'
+				name: 'Restaurant Name',
+				address: 'Address Text',
+				contact: 'Contact Number',
+				cuisine: 'Cuisine'
 			};
 
 			done();

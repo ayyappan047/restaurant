@@ -30,6 +30,9 @@ describe('Restaurant Model Unit Tests:', function() {
 		user.save(function() { 
 			restaurant = new Restaurant({
 				name: 'Restaurant Name',
+				address: 'Address Text',
+				contact: 'Contact Number',
+				cuisine: 'Cuisine',
 				user: user
 			});
 
